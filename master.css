@@ -1,0 +1,180 @@
+/* ============================================
+   MASTER.CSS — Hussain Raza Portfolio
+   Separation of concerns: no inline styles, no ID selectors.
+   ============================================ */
+
+:root {
+    --ink: #0B1220;
+    --ink-soft: #131C2E;
+    --paper: #E7ECF3;
+    --muted: #9DA9BD;
+    --gold: #F2B705;
+    --teal: #3E8E7E;
+    --line: #223049;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --gutter: clamp(1.25rem, 4vw, 3rem);
+    --radius: 8px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-body);
+    line-height: 1.65;
+  }
+
+  a { color: inherit; }
+  img { max-width: 100%; height: auto; display: block; }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 0.5em;
+    color: var(--paper);
+  }
+
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  .site-header, main > section, .site-footer { padding-inline: var(--gutter); }
+
+  /* ---------- Header (Flexbox micro alignment) ---------- */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(11, 18, 32, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-block: 1rem;
+  }
+  .brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+  .brand__mark { border-radius: 6px; }
+  .brand__name { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
+
+  .nav__list { display: flex; gap: clamp(1rem, 3vw, 2rem); list-style: none; margin: 0; padding: 0; }
+  .nav__link {
+    text-decoration: none;
+    font-size: 0.92rem;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.15s ease;
+  }
+  .nav__link:hover, .nav__link:focus-visible { border-color: var(--gold); }
+
+  /* ---------- Hero (CSS Grid macro structure) ---------- */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: var(--gutter);
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-block: clamp(3rem, 8vw, 5.5rem);
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    font-size: 0.8rem;
+    margin: 0 0 1rem;
+  }
+  .hero__heading { font-size: clamp(2rem, 4.2vw, 3rem); }
+  .hero__role { color: var(--teal); font-family: var(--font-mono); font-size: 1.1rem; margin: 0 0 1rem; }
+  .hero__lede { max-width: 52ch; color: var(--muted); }
+  .hero__actions { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+
+  .avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+  }
+
+  /* ---------- Buttons ---------- */
+  .button {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.88rem;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    transition: transform 0.15s ease;
+  }
+  .button:hover, .button:focus-visible { transform: translateY(-2px); }
+  .button--primary { background: var(--gold); color: var(--ink); }
+  .button--ghost { border-color: var(--gold); color: var(--paper); }
+
+  /* ---------- About ---------- */
+  .about { max-width: 1100px; margin-inline: auto; padding-block: clamp(2rem, 6vw, 4rem); border-top: 1px solid var(--line); }
+  .about__grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--gutter); align-items: start; }
+  .about__text { color: var(--muted); max-width: 62ch; }
+  .about__text p { margin: 0 0 1em; }
+
+  .skills { display: flex; flex-wrap: wrap; gap: 0.6rem; list-style: none; margin: 0; padding: 0; align-content: flex-start; }
+  .skills__item {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    border: 1px solid var(--teal);
+    color: var(--teal);
+    background: rgba(62, 142, 126, 0.1);
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius);
+  }
+
+  /* ---------- Projects (Grid macro layout) ---------- */
+  .projects { max-width: 1100px; margin-inline: auto; padding-block: clamp(2rem, 6vw, 4rem); border-top: 1px solid var(--line); }
+  .projects__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; margin-top: 2rem; }
+
+  .card { background: var(--ink-soft); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+  .card__icon { font-size: 1.8rem; padding: 1.25rem 1.25rem 0; }
+
+  /* Flexbox for internal card alignment (micro layout) */
+  .card__body { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem 1.25rem 1.5rem; flex: 1; }
+  .card__title { font-size: 1.05rem; margin: 0; }
+  .card__text { margin: 0; font-size: 0.92rem; color: var(--muted); flex: 1; }
+
+  .card__tags { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; margin: 0; padding: 0; }
+  .card__tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact { max-width: 1100px; margin-inline: auto; padding-block: clamp(2.5rem, 7vw, 5rem); border-top: 1px solid var(--line); text-align: center; }
+  .contact__text { color: var(--muted); margin-bottom: 1.5rem; }
+
+  /* ---------- Footer ---------- */
+  .site-footer { border-top: 1px solid var(--line); padding-block: 1.5rem; text-align: center; font-size: 0.85rem; color: #6B7A93; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 780px) {
+    .site-header__inner { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+    .nav__list { gap: 1rem; flex-wrap: wrap; }
+    .hero { grid-template-columns: 1fr; text-align: center; }
+    .hero__actions { justify-content: center; }
+    .hero__lede { margin-inline: auto; }
+    .avatar { margin-inline: auto; }
+    .about__grid { grid-template-columns: 1fr; }
+  }

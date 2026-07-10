@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hussain Raza — Aspiring Web Developer</title>
+<meta name="description" content="Portfolio of Hussain Raza, BSCS student and aspiring full-stack web developer, showcasing projects in HTML, CSS, JavaScript, and C++.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="master.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="#top" class="brand">
+      <picture>
+        <source srcset="logo-mark.webp" type="image/webp">
+        <img class="brand__mark" src="logo-mark.png" alt="Hussain Raza monogram logo" width="40" height="40">
+      </picture>
+      <span class="brand__name">Hussain Raza</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#top">Home</a></li>
+        <li><a class="nav__link" href="#about">About</a></li>
+        <li><a class="nav__link" href="#projects">Projects</a></li>
+        <li><a class="nav__link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero__copy">
+      <p class="eyebrow">// BSCS Student &middot; Full-Stack in progress</p>
+      <h1 id="hero-heading" class="hero__heading">Hussain Raza</h1>
+      <p class="hero__role">Frontend Developer &middot; CS Student &middot; Aspiring Web Developer</p>
+      <p class="hero__lede">
+        I build responsive, user-friendly, and interactive websites with HTML, CSS, and
+        JavaScript — and I'm working toward becoming a skilled full-stack developer.
+      </p>
+      <div class="hero__actions">
+        <a href="#projects" class="button button--primary">View my projects</a>
+        <a href="#contact" class="button button--ghost">Get in touch</a>
+      </div>
+    </div>
+    <picture>
+      <source srcset="avatar.webp" type="image/webp">
+      <img class="avatar" src="avatar.png" alt="Monogram avatar for Hussain Raza" width="160" height="160">
+    </picture>
+  </section>
+
+  <section id="about" class="about" aria-labelledby="about-heading">
+    <h2 id="about-heading">About Me</h2>
+    <div class="about__grid">
+      <div class="about__text">
+        <p>
+          Hi, I'm Hussain Raza, a Bachelor of Science in Computer Science (BSCS) student and an
+          aspiring web developer. I enjoy building responsive, user-friendly, and interactive
+          websites using HTML, CSS, JavaScript, and modern web technologies.
+        </p>
+        <p>
+          I have a strong interest in creating projects that solve real-world problems and
+          improve my programming skills. I enjoy learning new technologies, exploring creative
+          ideas, and continuously enhancing my knowledge of web development.
+        </p>
+        <p>
+          My goal is to become a skilled Full-Stack Web Developer, contribute to impactful
+          projects, and grow as a software engineer through continuous learning and hands-on
+          experience. I'm always excited to learn, collaborate, and take on new challenges that
+          help me grow as a developer.
+        </p>
+      </div>
+      <ul class="skills" aria-label="Skills">
+        <li class="skills__item">&lt;HTML/&gt;</li>
+        <li class="skills__item">CSS</li>
+        <li class="skills__item">JavaScript</li>
+        <li class="skills__item">C++</li>
+        <li class="skills__item">Responsive Design</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects" class="projects" aria-labelledby="projects-heading">
+    <h2 id="projects-heading">My Projects</h2>
+    <div class="projects__grid">
+
+      <article class="card">
+        <p class="card__icon" aria-hidden="true">🎮</p>
+        <div class="card__body">
+          <h3 class="card__title">Rock Paper Scissors Game</h3>
+          <p class="card__text">
+            Developed an interactive Rock Paper Scissors game with a clean user interface,
+            real-time score tracking, and dynamic game logic for an engaging user experience.
+          </p>
+          <ul class="card__tags" aria-label="Technologies used">
+            <li class="card__tag">HTML</li>
+            <li class="card__tag">CSS</li>
+            <li class="card__tag">JavaScript</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <p class="card__icon" aria-hidden="true">⚙️</p>
+        <div class="card__body">
+          <h3 class="card__title">Physics Forge</h3>
+          <p class="card__text">
+            Built a 2D physics simulation game in C++ using Object-Oriented Programming.
+            Implements gravity, motion, and collision mechanics through a custom physics engine.
+          </p>
+          <ul class="card__tags" aria-label="Technologies used">
+            <li class="card__tag">C++</li>
+            <li class="card__tag">OOP</li>
+            <li class="card__tag">Physics Engine</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <p class="card__icon" aria-hidden="true">📖</p>
+        <div class="card__body">
+          <h3 class="card__title">Synonym Finder</h3>
+          <p class="card__text">
+            Designed a responsive Synonym Finder web app integrating the Datamuse API to fetch
+            synonyms, antonyms, definitions, and audio pronunciations in real time, with Dark Mode.
+          </p>
+          <ul class="card__tags" aria-label="Technologies used">
+            <li class="card__tag">HTML</li>
+            <li class="card__tag">CSS</li>
+            <li class="card__tag">JavaScript</li>
+            <li class="card__tag">Datamuse API</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Let's Connect</h2>
+    <p class="contact__text">Open to internships, collaboration, and new challenges.</p>
+    <a class="button button--primary" href="mailto:hussainabidi400@gmail.com">hussainabidi400@gmail.com</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Hussain Raza. Built with HTML &amp; CSS.</p>
+</footer>
+
+</body>
+</html>
